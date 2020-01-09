@@ -56,6 +56,7 @@ class AdminController extends Controller
             $gallery = "";
         }
 
+        $kofer->kategorija                   = $request->input("kategorija");
         $kofer->kofer_naziv                  = $request->input("kofer_naziv");
         $kofer->alias                        = $alias;
         $kofer->kofer_cena                   = $request->input("kofer_cena");
@@ -70,7 +71,7 @@ class AdminController extends Controller
         $kofer->za_skije                     = $request->input("za_skije");
         $kofer->boja                         = $request->input("boja");
         $kofer->status                       = $request->input("status");
-        $kofer->main_image                   = $request->input("main_image");
+        $kofer->main_image                   = $request->input("mainImage");
         $kofer->image_gallery                = $gallery;
 
         $saveKoferi = $kofer->save();
@@ -89,6 +90,71 @@ class AdminController extends Controller
     }
 
 
+    public function getListKoferi(){
+
+        $koferi = Koferi::get();
+
+        return view("admin/pages/lista-kofera", compact("koferi"));
+
+    }
+
+
+    public function getEditKofer($id){
+
+        $gallery = new ImageGallery();
+        $allImages = $gallery->orderBy('id', 'DESC')->get();
+
+        $kofer = Koferi::where("id", $id)->first();
+
+        return view("admin/pages/izmeni-kofer", compact("kofer", "allImages"));
+
+    }
+
+
+    public function editKofer(Request $request){
+
+        if(!empty($request->input("galleryImages"))){
+            $gallery = implode(",", $request->input("galleryImages"));
+        }else{
+            $gallery = "";
+        }
+
+
+        $updateKofer = Koferi::where("id", $request->input("id"))->update([
+
+            "kategorija"     => $request->input("kategorija"),
+            "kofer_naziv"    => $request->input("kofer_naziv"),
+            "alias"          => str_slug($request->input('kofer_naziv'), '-'),
+            "kofer_cena"     => $request->input("kofer_cena"),
+            "duzina_sirina_visina" => $request->input("duzina_sirina_visina"),
+            "unutrasnja_dimenzija"  => $request->input("unutrasnja_dimenzija"),
+            "litraza"        => $request->input("litraza"),
+            "tezina_kofera"  => $request->input("tezina_kofera"),
+            "max_nosivost"   => $request->input("max_nosivost"),
+            "otvaranje"      => $request->input("otvaranje"),
+            "zakljucavanje"  => $request->input("zakljucavanje"),
+            "nacin_kacenja"  => $request->input("nacin_kacenja"),
+            "za_skije"       => $request->input("za_skije"),
+            "boja"           => $request->input("boja"),
+            "status"         => $request->input("status"),
+            "main_image"     => $request->input("mainImage"),
+            "image_gallery"  => $gallery
+  
+        ]);
+
+
+        if($updateKofer){
+
+            return redirect()->back()->with('success', 'Uspešno ste izmenili kofer');
+
+        }else{
+
+            return redirect()->back()->with('messageError', 'Niste izmenili kofer');
+
+        }
+
+
+    }
    
 
 

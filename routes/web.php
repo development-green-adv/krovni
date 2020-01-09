@@ -51,6 +51,13 @@ Route::get("/admin/obrisi-administratora/{id}", "AdminController@deleteAdmin")->
 // rute za kofere
 Route::get("/admin/dodaj-kofere", "AdminController@getAddKofer")->middleware("auth");
 Route::post("/admin/dodaj-kofere", "AdminController@storeKofer")->middleware("auth");
+Route::get("/admin/lista-kofera", "AdminController@getListKoferi")->middleware("auth");
+Route::get("/admin/izmeni-kofer/{id}", "AdminController@getEditKofer")->middleware("auth");
+Route::post("/admin/izmeni-kofer", "AdminController@editKofer")->middleware("auth");
+
+
+
+
 
 // ruta za dodavanje slika
 Route::post("/admin/dodaj-galeriju-slika", "AdminController@storeImages")->middleware("auth");

@@ -48,9 +48,11 @@
             @endif
 
 
-            <form action="/admin/dodaj-kofere" method="POST" enctype="multipart/form-data">
+            <form action="/admin/izmeni-kofer" method="POST" enctype="multipart/form-data">
                 @csrf
 
+
+                <input type="hidden" name="id" value="{{ $kofer->id }}">
 
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
@@ -68,67 +70,67 @@
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Naziv proizvoda</label>
-                        <input class="form-control" type="text" name="kofer_naziv">
+                        <input class="form-control" type="text" name="kofer_naziv" value="{{ $kofer->kofer_naziv }}">
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <label>Cena proizvoda</label>
-                        <input class="form-control" type="text" name="kofer_cena">
+                        <input class="form-control" type="text" name="kofer_cena" value="{{ $kofer->kofer_cena }}">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Duzina x sirina x visina</label>
-                        <input class="form-control" type="text" name="duzina_sirina_visina">
+                        <input class="form-control" type="text" name="duzina_sirina_visina" value="{{ $kofer->duzina_sirina_visina }}">
                     </div>
 
                     <div class="form-group col-12 col-md-6">
                         <label>Unutrasnja dimenzija</label>
-                        <input class="form-control" type="text" name="unutrasnja_dimenzija">
+                        <input class="form-control" type="text" name="unutrasnja_dimenzija" value="{{ $kofer->unutrasnja_dimenzija }}">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Litraza</label>
-                        <input class="form-control" type="text" name="litraza">
+                        <input class="form-control" type="text" name="litraza" value="{{ $kofer->litraza }}">
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <label>Tezina praznog kofera</label>
-                        <input class="form-control" type="text" name="tezina_kofera">
+                        <input class="form-control" type="text" name="tezina_kofera" value="{{ $kofer->tezina_kofera }}">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Max dozvoljena nosivost</label>
-                        <input class="form-control" type="text" name="max_nosivost">
+                        <input class="form-control" type="text" name="max_nosivost" value="{{ $kofer->max_nosivost }}">
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <label>Otvaranje</label>
-                        <input class="form-control" type="text" name="otvaranje">
+                        <input class="form-control" type="text" name="otvaranje" value="{{ $kofer->otvaranje }}">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Centralno zakljucavanje</label>
-                        <input class="form-control" type="text" name="zakljucavanje">
+                        <input class="form-control" type="text" name="zakljucavanje" value="{{ $kofer->zakljucavanje }}">
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <label>Nacin kacenja</label>
-                        <input class="form-control" type="text" name="nacin_kacenja">
+                        <input class="form-control" type="text" name="nacin_kacenja" value="{{ $kofer->nacin_kacenja }}">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group col-12 col-md-6">
                         <label>Pogodno za skije</label>
-                        <input class="form-control" type="text" name="za_skije">
+                        <input class="form-control" type="text" name="za_skije" value="{{ $kofer->za_skije }}">
                     </div>
                     <div class="form-group col-12 col-md-6">
                         <label>Boja</label>
-                        <input class="form-control" type="text" name="boja">
+                        <input class="form-control" type="text" name="boja" value="{{ $kofer->boja }}">
                     </div>
                 </div>
 
@@ -137,8 +139,8 @@
                         <label for="">Status dogadjaja</label>
                         <select class="form-control" name="status">
 
-                            <option value="1">Aktivan</option>
-                            <option value="0">Neaktivan</option>
+                            <option @if($kofer->status == 1) selected @endif value="1">Aktivan</option>
+                            <option @if($kofer->status == 0) selected @endif value="0">Neaktivan</option>
 
                         </select>
                     </div>
