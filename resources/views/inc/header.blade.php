@@ -48,10 +48,10 @@
                   <a class="nav-link" href="/">NASLOVNA</a>
                 </li>
                 <li class="nav-item position-relative">
-                  <a class="nav-link" href="/krovni-koferi">KROVNI KOFERI</a>
+                  <a class="nav-link" href="#">KROVNI KOFERI</a>
                   <ul class="dropdown">
                       <li>
-                          <a href="#">
+                          <a href="/krovni-koferi">
                               <img src="{{ asset('images/web/krovni-koferi-thule.png') }}" alt="">
                               <p>KROVNI KOFERI THULE</p>
                           </a>
@@ -71,7 +71,7 @@
                   </ul>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">KROVNI NOSAČI</a>
+                  <a class="nav-link" href="/krovni-nosaci">KROVNI NOSAČI</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">RENTIRAJTE ONLINE</a>

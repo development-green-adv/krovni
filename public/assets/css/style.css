@@ -715,3 +715,21 @@ footer {
     padding-left: 20px;
     padding-bottom: 3px;
 }
+
+.krovni-nosaci-card {
+    display: flex;
+}
+
+.krovni-nosaci-card img {
+    margin-right: 20px;
+}
+
+.krovni-nosaci-card h1 {
+    font-family: machine-font;
+    font-size: 35px;
+    margin-top: 20px;
+}
+
+.krovni-nosaci-card p {
+    font-family: 'Roboto', sans-serif;
+}
