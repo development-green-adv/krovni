@@ -693,6 +693,13 @@ footer {
     opacity: .8;
 }
 
+.krovni-koferi-right-card-img-inner a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
 .krovni-koferi-right-card-img-inner h4 {
     color: #fff;
     font-family: machine-font;
