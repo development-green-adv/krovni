@@ -699,3 +699,19 @@ footer {
     font-size: 20px;
     margin-top: 20px;
 }
+
+.krovni-koferi-bottom {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.krovni-koferi-bottom-card a {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Roboto', sans-serif;
+    padding-left: 20px;
+    padding-bottom: 3px;
+}
