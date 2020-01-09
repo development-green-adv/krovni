@@ -674,3 +674,28 @@ footer {
     margin-bottom: 20px;
     cursor: pointer;
 }
+
+.krovni-koferi-right-card-img:hover > .krovni-koferi-right-card-img-inner {
+    display: flex;
+}
+
+.krovni-koferi-right-card-img-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    opacity: .8;
+}
+
+.krovni-koferi-right-card-img-inner h4 {
+    color: #fff;
+    font-family: machine-font;
+    font-size: 20px;
+    margin-top: 20px;
+}
