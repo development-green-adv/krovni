@@ -30,6 +30,10 @@ Route::get('/krovni-nosaci', function () {
     return view('krovni-nosaci');
 });
 
+Route::get('/jedan-proizvod', function () {
+    return view('jedan-proizvod');
+});
+
 
 // rute za admin deo
 Route::get("/admin/login", "AdminController@loginView")->name("admin.login");
