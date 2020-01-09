@@ -43,7 +43,7 @@
                                     <div class="krovni-koferi-right-card-img position-relative">
                                         <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
                                         <div class="krovni-koferi-right-card-img-inner">
-                                            <a href="#">
+                                            <a href="/jedan-proizvod">
                                                 <img src="{{ asset('images/web/lupa.png') }}" alt="">
                                                 <h4>KLIKNI ZA VISE DETALJA</h4>
                                             </a>

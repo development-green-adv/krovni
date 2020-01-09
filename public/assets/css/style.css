@@ -740,3 +740,63 @@ footer {
 .krovni-nosaci-card p {
     font-family: 'Roboto', sans-serif;
 }
+
+/* JEDAN PROIZVOD */
+
+.cena-proizvoda-naslov {
+    margin-right: 50px;
+    margin-top: 10px;
+    color: #ffd800;
+}
+
+.jedan-prozivod-slika {
+    text-align: center;
+    padding: 50px;
+}
+
+.opis-proizvoda h5 {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+ul.karakteristike-proizvoda {
+    list-style-type: none;
+}
+
+ul.karakteristike-proizvoda li {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul.karakteristike-proizvoda li:nth-child(odd) {
+    background-color: #e5e5e5;
+    padding: 10px 100px 10px 20px;
+
+}
+
+ul.karakteristike-proizvoda li:nth-child(even) {
+    padding: 10px 100px 10px 20px;
+    background-color: #fff;
+}
+
+.opis-proizvoda-btns a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.opis-proizvoda-btns a:first-child {
+    background-color: #ffd800;
+    padding: 15px 30px;
+    font-family: 'Roboto', sans-serif;
+    margin-right: 10px;
+}
+
+.opis-proizvoda-btns a:last-child {
+    background-color: #000;
+    padding: 15px 30px;
+    font-family: 'Roboto', sans-serif;
+}
