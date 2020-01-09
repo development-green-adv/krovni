@@ -4,13 +4,8 @@
 
     <style>
         
-        .modal-img {
-            margin-bottom: auto;
-            margin-top: auto;
-        }
-        #slike img {
-            max-width: 150px;
-            margin-top: 10px;
+        .li{
+            list-style-type: none;
         }
     
     </style>
@@ -20,129 +15,152 @@
 @section('data')
 
     <div class="row">
+        <div class="col-12 col-md-12">
+            <h4>Dodaj kofere</h4>
+            <div style="border-bottom: 1px solid #c5c5c5; margin-bottom: 30px;"></div>
+        </div>
+        <div class="col-12 col-md-2"></div>
+        <div class="col-12 col-md-8">
+            <div class="row">
+                
+            </div>
         
-        <form action="/admin/dodaj-poziciju" method="POST">
-            @csrf
-            <div class="col-12 col-md-1"></div>
+            @if($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-            <div class="col-12 col-md-10">
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+
+            @if(session()->has('messageError'))
+                <div class="alert alert-danger">
+                    {{ session()->get('messageError') }}
+                </div>
+            @endif
+
+
+            <form action="/admin/dodaj-kofere" method="POST" enctype="multipart/form-data">
+                @csrf
+
+
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Naziv proizvoda</label>
+                        <input class="form-control" type="text" name="kofer_naziv">
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <label>Cena proizvoda</label>
+                        <input class="form-control" type="text" name="kofer_cena">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Duzina x sirina x visina</label>
+                        <input class="form-control" type="text" name="duzina_sirina_visina">
+                    </div>
+
+                    <div class="form-group col-12 col-md-6">
+                        <label>Unutrasnja dimenzija</label>
+                        <input class="form-control" type="text" name="unutrasnja_dimenzija">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Litraza</label>
+                        <input class="form-control" type="text" name="litraza">
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <label>Tezina praznog kofera</label>
+                        <input class="form-control" type="text" name="tezina_kofera">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Max dozvoljena nosivost</label>
+                        <input class="form-control" type="text" name="max_nosivost">
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <label>Otvaranje</label>
+                        <input class="form-control" type="text" name="otvaranje">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Centralno zakljucavanje</label>
+                        <input class="form-control" type="text" name="zakljucavanje">
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <label>Nacin kacenja</label>
+                        <input class="form-control" type="text" name="nacin_kacenja">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                        <label>Pogodno za skije</label>
+                        <input class="form-control" type="text" name="za_skije">
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <label>Boja</label>
+                        <input class="form-control" type="text" name="boja">
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-12 col-md-12">
-                        <h4>Dodaj Poziciju</h4>
-                        <div style="border-bottom: 1px solid #c5c5c5; margin-bottom: 30px;"></div>
-                    </div>
-                </div>
+                        <label for="">Status dogadjaja</label>
+                        <select class="form-control" name="status">
 
-                @if($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <p>{{ $error }}</p>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+                            <option value="1">Aktivan</option>
+                            <option value="0">Neaktivan</option>
 
-                @if(session()->has('success'))
-                    <div class="alert alert-success text-center">
-                        {{ session()->get('success') }}
+                        </select>
                     </div>
-                @endif
-
-                @if(session()->has('messageError'))
-                    <div class="alert alert-danger text-center">
-                        {{ session()->get('messageError') }}
-                    </div>
-                @endif
-
-                
+                </div><br>
 
                 <div class="row">
-                    
-                    <div class="col-12 col-md-2"></div>
-                    
-                    <div class="col-12 col-md-8">
-                        
-                        <div class="row">
-
-                            <div class="form-group col-12 col-md-6">
-
-                                <label for="">Izaberite jezik</label>
-                                <select class="form-control" name="lang">
-
-                                    <option value="en">Engleski</option>
-                                    <option value="de">Nemački</option>
-                                    <option value="sr">Srpski</option>
-                                    
-                                </select>
-        
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="form-group col-12 col-md-6">
-
-                                <label for="">Naslov</label>
-                                <input class="form-control" type="text" name="title">
-        
-                            </div>
-
-                        </div>
-
-                        <div class="row">
-
-                            <div class="form-group col-12 col-md-12">
-
-                                <label>Tekst</label>
-                                <textarea class="textarea" name="text" placeholder="Unesite tekst ovde" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-
-                            </div>
-
-                        </div>
-
-                        <br>
-
-                        <div class="row">
-
-                            <div class="col-12 col-md-6">
-
-                                <label for="">Status dogadjaja</label>
-                                <select class="form-control" name="status">
-
-                                    <option value="1">Aktivan</option>
-                                    <option value="0">Neaktivan</option>
-                                    
-                                </select>
-        
-                            </div>
-
-                        </div>
-                        
-                        <br>
-
-                        <div class="row">
-
-                            <div class="col-12 col-md-6">
-
-                                <button class="btn btn-success">Sačuvaj</button>
-        
-                            </div>
-
-                        </div>
-
+                    <div class="form-group col-12 col-md-12">
+                        <label>Glavna slika</label><br>
+                        <span class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Izaberi</span>
                     </div>
+                </div>
+                <div id="glavna-slika">
 
                 </div>
 
-                
-            </div>
 
-        </form>
+                <div class="row">
+                    <div class="form-group col-12 col-md-6">
+                    
+                        <label>Galerija slika</label><br>
+                        <span class="btn btn-primary" data-toggle="modal" data-target="#myModal">Izaberi</span>
+                        <div id="slike"></div>
+
+                    </div>
+                </div>
+                
+                <hr>
+
+                <button class="btn btn-primary">Sačuvaj</button>
+            </form>
+        </div>
 
     </div>
+
+    
 
 
     <div id="myModal" class="modal fade" role="dialog">
@@ -174,7 +192,7 @@
                         @if(count($allImages) > 0)
                             @foreach ($allImages as $image)
                                 <div class="col-12 col-md-3" style="margin-top: 30px; height: 120px; width: 120px; overflow: hidden; display: inline-flex;">
-                                <img class="img-responsive modal-img" id="{{ $image->id }}" name="{{ $image->image_name }}" onclick="getImageValue({{ $image->id }})" src="../images_gallery/{{ $image->image_name }}">
+                                <img class="img-responsive modal-img" id="{{ $image->id }}" name="{{ $image->image_name }}" onclick="getImageValue({{ $image->id }})" src="../public/images_gallery/{{ $image->image_name }}">
                                 </div>
                             @endforeach
                         @endif
@@ -218,7 +236,7 @@
                         @if(count($allImages) > 0)
                             @foreach ($allImages as $image)
                                 <div class="col-12 col-md-3" style="margin-top: 30px; height: 120px; width: 120px; overflow: hidden; display: inline-flex;">
-                                <img class="img-responsive modal-img bor" id="1{{ $image->id }}" name="{{ $image->image_name }}" onclick="getImageValue1({{ $image->id }})" src="../images_gallery/{{ $image->image_name }}">
+                                <img class="img-responsive modal-img bor" id="1{{ $image->id }}" name="{{ $image->image_name }}" onclick="getImageValue1({{ $image->id }})" src="{{ asset('public/images_gallery/'.$image->image_name) }}">
                                 </div>
                             @endforeach
                         @endif
@@ -233,6 +251,30 @@
     </div>
 
 
+    <script>    
+
+        $(".category_langg").css("display", "none");
+                    
+        $("#langg").on("change", function(){
+
+            var lang = $(".category_langg").attr("lang");
+
+            if($(this).val() == lang){
+
+                $(".category_langg").css("display", "block");
+
+            }else{
+
+                $(".category_langg").css("display", "none");
+
+            }
+
+        });
+        
+    </script>
+
+
+    
     <script>
 
         var imageArray = [];
@@ -293,7 +335,7 @@
 
             for (var i = 0; i < arrayLength; i++) {
 
-                var img = "<img class='img-responsive' src='../images_gallery/"+imageArray[i]+"'/>";
+                var img = "<img class='img-responsive' src='../public/images_gallery/"+imageArray[i]+"'/>";
                 var input = "<input type='hidden' name='galleryImages[]' value="+imageArray[i]+" />";
 
                 $("#slike").append(img);
@@ -311,7 +353,7 @@
 
             for (var i = 0; i < arrayLength1; i++) {
 
-                var img1 = "<img class='img-responsive' src='../images_gallery/"+imageArray1[i]+"'/>";
+                var img1 = "<img class='img-responsive' src='../public/images_gallery/"+imageArray1[i]+"'/>";
                 var input1 = "<input type='hidden' name='mainImage' value="+imageArray1[i]+" />";
 
                 $("#glavna-slika").append(img1);
@@ -348,7 +390,7 @@
                         $("#gallery-images").empty();
 
                         for(var i = 0; i < data.length; i++){
-                            $('#gallery-images').append('<div class="col-12 col-md-3" style="margin-top: 30px; height: 120px; width: 120px; overflow: hidden; display: inline-flex;"><img class="img-responsive modal-img" id="'+ data[i]['id'] +'" name="'+ data[i]['image_name'] +'" onclick="getImageValue('+ data[i]['id'] +')" src="/public/images_gallery/' + data[i]['image_name'] + '"></div>');   
+                            $('#gallery-images').append('<div class="col-12 col-md-3" style="margin-top: 30px; height: 120px; width: 120px; overflow: hidden; display: inline-flex;"><img class="img-responsive modal-img" id="'+ data[i]['id'] +'" name="'+ data[i]['image_name'] +'" onclick="getImageValue('+ data[i]['id'] +')" src="../public/images_gallery/' + data[i]['image_name'] + '"></div>');   
                         }
 
                         $("#gallery-images").fadeIn(4000);
@@ -411,6 +453,6 @@
         }
 
     </script>
-
+    
 
 @endsection

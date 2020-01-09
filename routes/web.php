@@ -44,6 +44,13 @@ Route::get("/admin/lista-administratora", "AdminController@listAdmins")->middlew
 Route::get("/admin/obrisi-administratora/{id}", "AdminController@deleteAdmin")->middleware("auth");
 
 
+// rute za kofere
+Route::get("/admin/dodaj-kofere", "AdminController@getAddKofer")->middleware("auth");
+Route::post("/admin/dodaj-kofere", "AdminController@storeKofer")->middleware("auth");
+
+// ruta za dodavanje slika
+Route::post("/admin/dodaj-galeriju-slika", "AdminController@storeImages")->middleware("auth");
+
 Route::get("/home", "HomeController@index");
 
 Auth::routes();

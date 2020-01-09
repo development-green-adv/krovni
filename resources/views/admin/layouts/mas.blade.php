@@ -148,14 +148,14 @@
                 <li class="treeview">
                     <a href="#">
                     <i class="fas fa-users"></i>
-                    <span style="margin-left: 5px;">Proizvodi</span>
+                    <span style="margin-left: 5px;">Krovni koferi</span>
                     <span class="pull-right-container">
                         <span class="label label-primary pull-right">2</span>
                     </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/add-products"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Proizvod</a></li>
-                        <li><a href="#"><i class="fas fa-arrow-alt-circle-right"></i> Lista Admina</a></li>
+                        <li><a href="/admin/dodaj-kofere"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kofere</a></li>
+                        <li><a href="/admin/lista-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista Kofera</a></li>
                     </ul>
                 </li>
                 <!--// Kraj kategorije -->
