@@ -1,0 +1,676 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+@font-face {
+    font-family: machine-font;
+    src: url('../../fonts/tt0534m0.ttf');
+}
+
+.first-header {
+    background-color: #252525;
+    background-image: url('../../images/web/first-header-traka.png');
+    background-repeat: no-repeat;
+    background-position: right;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transition: all .3s;
+}
+
+.first-header .social-icons {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.first-header .social-icons a {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.first-header-info {
+    display: flex;
+}
+
+.first-header-info p {
+    color: #fff;
+    margin-bottom: 0;
+    padding-top: 13px;
+    margin-right: 20px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.first-header-info div a {
+    background-color: transparent;
+    text-decoration: none !important;
+    color: #000000;
+    padding-top: 4px;
+    font-weight: bold;
+    font-size: 26px;
+    margin-left: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: machine-font;
+}
+
+
+.first-header-info a:hover {
+    color: #000000;
+}
+
+.second-header {
+    background-image: url('../../images/web/second-header-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.second-header-left p {
+    background-color: #ffd800;
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #000000;
+    font-family: machine-font;
+}
+
+.second-header-right {
+    display: flex;
+    align-items: center;
+}
+
+.second-header-right .phone {
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #252525;
+    transition: all .3s;
+}
+
+.second-header-right .phone a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-header-right .phone a img {
+    transition: all .3s;
+}
+
+.second-header-right .phone:hover {
+    border: 2px solid #ffd800;
+}
+
+.second-header-right .phone:hover > a > img {
+    transform: scale(.87);
+}
+
+.second-header-right .viber {
+    background-color: #7d3daf;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #252525;
+    margin-left: 10px;
+    transition: all .3s;
+}
+
+.second-header-right .viber a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-header-right .viber a img {
+    transition: all .3s;
+}
+
+.second-header-right .viber:hover {
+    border: 2px solid #ffd800;
+}
+
+.second-header-right .viber:hover > a > img {
+    transform: scale(.87);
+}
+
+.second-header-right .whats-app {
+    background-color: #2cb742;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #252525;
+    margin-left: 10px;
+    transition: all .3s;
+}
+
+.second-header-right .whats-app a {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.second-header-right .whats-app a img {
+    transition: all .3s;
+}
+
+.second-header-right .whats-app:hover {
+    border: 2px solid #ffd800;
+}
+
+.second-header-right .whats-app:hover > a > img {
+    transform: scale(.87);
+}
+
+.navigation {
+    background-color: #000000;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    position: sticky;
+    top: 46.500px;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    transition: all .3s;
+}
+
+.navbar-nav {
+    width: 100%;
+    justify-content: space-between;
+}
+.collapse .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    font-weight: bold;
+    transition: all .3s;
+    font-family: machine-font;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    color: #ffd800 !important; 
+}
+
+ul.dropdown {
+    border-bottom: 5px solid #ffd800;
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 40px 30px 0 30px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+}
+
+ul.dropdown li a {
+    text-decoration: none;
+    display: block;
+    transition: all .3s;
+}
+
+ul.dropdown li a:hover > p {
+    color: #ffd800;
+}
+
+ul.dropdown li a p {
+    color:  #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.collapse .navbar-nav .nav-item:hover > ul.dropdown {
+    display: flex;
+}
+
+
+/* SLIDER */
+
+.slider-content {
+    position: absolute;
+    top: 40%;
+}
+
+.slider-content h3 {
+    text-transform: uppercase;
+    color: #ffd800;
+    font-weight: 400;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.slider-content h1 {
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.slider-content a.slider-btn-1 {
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #ffd800;
+    color: #fff;
+    padding: 10px 20px;
+    transition: all .3s;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+.slider-content a.slider-btn-1:hover {
+    background-color: #252525;
+}
+
+.slider-content a.slider-btn-2 {
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #252525;
+    color: #fff;
+    padding: 10px 20px;
+    transition: all .3s;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+
+.slider-content a.slider-btn-2:hover {
+    background-color: #ffd800;
+}
+
+.first-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 5px solid #ffd800;
+    position: relative;
+}
+
+.first-section .first-section-img {
+    position: absolute;
+    left: 0;
+    top: -35px;
+}
+
+.first-section h1 {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 33px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.first-section h1 span {
+    color: #ffd800;
+}
+
+.first-section p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.second-section {
+    width: 100%;
+    background-image: url('../../images/web/second-section-bg.png'), url('../../images/web/second-header-traka.png');
+    background-position: 0px 0px, 0px 21px;
+    background-repeat: no-repeat;
+    border-bottom: 8px solid #ffd800;
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+.second-section h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.second-section h1 span {
+    color: #ffd800;
+}
+
+.checkbox-items div {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.marka-vozila-items {
+    padding: 7px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+    background: url('../../images/web/arrow-down-select.png')  97% center, url('../../images/web/arrow-select.png')  92% center, #fff;
+    background-repeat: no-repeat, no-repeat;
+}
+
+select::-ms-expand {display: none;}
+
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.gj-datepicker {
+    background: #fff !important;
+    margin-right: 5px;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.napomena h5 {
+    color: #ffd800;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+
+.napomena p {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.second-section-right input {
+    padding: 6px 15px 6px 15px;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    width: 99%;
+}
+
+.second-section-right .phone-adress {
+    display: inline-block;
+    width: 49%;
+}
+
+.second-section-right textarea {
+    width: 99%;
+    padding: 6px 15px 6px 15px;
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 3px;
+}
+
+.second-section-right button {
+    background-color: #ffd800;
+    color: #fff;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    float: right;
+    padding: 10px 20px;
+    border-radius: 3px;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+/* SERVECES */
+
+.services {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+.services h1 {
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.services h1 span {
+    color: #ffd800;
+}
+
+.service-card h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.service-card p {
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+.service-card a {
+    text-decoration: none;
+    background-color: #000000;
+    padding: 10px 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    transition: all .3s;
+}
+
+.service-card a:hover {
+    background-color: #ffd800;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #000000;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.footer-card {
+    display: flex;
+    /* align-items: center; */
+}
+
+.footer-card .footer-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #ffd800;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #252525;
+    margin-right: 10px;
+}
+
+.footer-card h3 {
+    color: #fff;
+    font-size: 20px;
+    font-family: machine-font;
+}
+
+.footer-card a {
+    color: #fff;
+    font-size: 20px;
+    font-family: machine-font;
+    text-decoration: none;
+}
+
+.footer-card a span {
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer-bottom {
+    background-color: #242426;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.footer-bottom p {
+    margin-bottom: 0;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    text-decoration: none;
+    color: #ffd800;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* KROVNI KOFERI */
+
+.main-image {
+    background-image: url('../../images/web/krovni-koferi-image-page.png');
+    background-position: center;
+    background-size: cover;
+    padding: 100px 0px;
+}
+
+.main-image .main-image-content h4 {
+    color: #ffd800;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.main-image .main-image-content h1 {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+}
+
+.krovni-koferi-page {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-top: 5px solid #ffd800;
+    position: relative;
+}
+
+.krovni-koferi-page .first-section-img {
+    position: absolute;
+    left: 0;
+    top: -35px;
+}
+
+.left-meni .left-meni-naslovna {
+    background-image: url('../../images/web/left-meni-naslovna.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 5px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+}
+
+.left-meni .left-meni-naslovna h3 {
+    display: inline;
+    color: #fff;
+    font-family: machine-font;
+    padding-left: 20px;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.left-meni ul.left-meni-items li.li-drop {
+    list-style-type: none;
+    background-image: url('../../images/web/left-meni-item.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-size: 16px;
+    cursor: pointer;
+    height: 35px;
+    margin-bottom: 5px;
+}
+
+.left-meni-items-inner li a {
+     color: #000000;
+     text-decoration: none;
+     transition: all .3s;
+}
+
+
+.left-meni-items-inner {
+    background-color: #fff;
+    list-style: none !important;
+    padding: 10px 20px 10px 20px;
+}
+
+.left-meni-items-inner li {
+    margin-bottom: 10px;
+}
+
+.left-meni-items-inner li a {
+    font-family: 'Roboto', sans-serif;
+}
+
+.left-meni-items-inner li a:hover {
+    color: #ffd800;
+}
+
+.krovni-koferi-right-naslov {
+    background-image: url('../../images/web/krovni-koferi-right.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 35px;
+    padding-left: 20px;
+    font-family: machine-font;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.krovni-koferi-right-naslov h3 {
+    display: inline;
+    color: #fff;
+    font-family: machine-font;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.krovni-koferi-right-card p {
+    font-family: 'Roboto', sans-serif;
+}
+
+.krovni-koferi-right-card  .krovni-koferi-right-card-img {
+    margin-bottom: 20px;
+    cursor: pointer;
+}
