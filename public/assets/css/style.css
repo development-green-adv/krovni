@@ -896,3 +896,53 @@ ul.karakteristike-proizvoda li:nth-child(even) {
     background-color: #000000;
     font-family: 'Roboto', sans-serif;
 }
+
+/* KONTAKT */
+
+.kontakt-text {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.kontakt-page-form form {
+    width: 70%;
+}
+
+.kontakt-page-form form input {
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 3px;
+}
+
+.kontakt-page-form form input:nth-child(1) {
+    width: 99%;
+    margin-bottom: 20px;
+}
+
+.kontakt-page-form form .kontakt-page-form-1 {
+    width: 49%;
+    margin-bottom: 20px;
+}
+
+.kontakt-page-form form .kontakt-page-form-2 {
+    width: 49%;
+    margin-bottom: 20px;
+}
+
+.kontakt-page-form form textarea {
+    width: 99%;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.kontakt-page-form form button {
+    border: none;
+    background-color: #ffd800;
+    color: #fff;
+    padding: 15px 30px;
+    font-family: 'Roboto', sans-serif;
+    float: right;
+}
