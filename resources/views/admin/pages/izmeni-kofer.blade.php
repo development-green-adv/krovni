@@ -61,6 +61,9 @@
                         <select class="form-control" name="kategorija">
     
                             <option selected disabled value="">Izaberite kategoriju</option>
+                            <option value="krovni-kofer-thule">Krovni kofer THULE</option>
+                            <option value="krovni-kofer-g3">Krovni kofer G3</option>
+                            <option value="krovni-kofer-cam">Krovni koferi CAM</option>
     
                         </select>
 

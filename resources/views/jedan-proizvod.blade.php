@@ -34,12 +34,12 @@
                 <div class="col-md-9">
                     <div class="krovni-koferi-right position-relative">
                         <div class="krovni-koferi-right-naslov d-flex justify-content-between">
-                            <h3>KROVNI KOFERI THULE - MOTION XT SPORT</h3>
-                            <h4 class="cena-proizvoda-naslov">64.500,00 RSD</h4>
+                            <h3>{{ str_replace("-", " ", $category) }} - {{ $kofer->kofer_naziv }}</h3>
+                            <h4 class="cena-proizvoda-naslov">{{ $kofer->kofer_cena }},00 RSD</h4>
                         </div>
 
                         <div class="jedan-prozivod-slika">
-                            <img src="{{ asset('images/web/single-proizvod.png') }}" alt="">
+                            <img src="../../images_gallery/{{ $kofer->main_image }}" alt="{{ $kofer->kofer_naziv }}">
                         </div>
 
                         <div class="krovni-koferi-right-naslov opis-proizvoda">
@@ -47,19 +47,19 @@
                         </div>
 
                         <ul class="karakteristike-proizvoda">
-                            <li><span>Unutrašnja dimenzija</span> <span>215x85x43</span></li>
-                            <li><span>Litraža</span> <span>610 Kg</span></li>
-                            <li><span>Težina praznog kofera</span> <span>25.5</span></li>
-                            <li><span>Max. dozvoljena nosivost</span> <span>75 Kg</span></li>
-                            <li><span>Otvaranje</span> <span>dvostrano</span></li>
-                            <li><span>Centralno zaključavanje</span> <span>da</span></li>
-                            <li><span>Način kačenja</span> <span>Power Click</span></li>
-                            <li><span>Pogodno za skije</span> <span>>215 5-7 pari</span></li>
+                            <li><span>Unutrašnja dimenzija</span> <span>{{ $kofer->unutrasnja_dimenzija }}</span></li>
+                            <li><span>Litraža</span> <span>{{ $kofer->litraza }} Kg</span></li>
+                            <li><span>Težina praznog kofera</span> <span>{{ $kofer->tezina_kofera }} kg</span></li>
+                            <li><span>Max. dozvoljena nosivost</span> <span>{{ $kofer->max_nosivost }} Kg</span></li>
+                            <li><span>Otvaranje</span> <span>{{ $kofer->otvaranje }}</span></li>
+                            <li><span>Centralno zaključavanje</span> <span>{{ $kofer->zakljucavanje }}</span></li>
+                            <li><span>Način kačenja</span> <span>{{ $kofer->nacin_kacenja }}</span></li>
+                            <li><span>Pogodno za skije</span> <span>{{ $kofer->za_skije }}</span></li>
                         </ul>
 
                         <div class="opis-proizvoda-btns mt-4">
                             <a id="posaljite-upit" href="javascript:void(0)">POŠALJITE UPIT</a>
-                            <a href="/krovni-koferi">POVRATAK</a>
+                            <a href="/krovni-koferi/{{ $category }}">POVRATAK</a>
                         </div>
 
                         <div class="upit" id="upit">
@@ -69,10 +69,10 @@
                             </div>
                             <div class="upit-content">
                                 <div class="upit-content-top">
-                                    <img src="{{ asset('images/web/upit-img.png') }}" alt="">
+                                    <img src="../../images_gallery/{{ $kofer->main_image }}" alt="{{ $kofer->kofer_naziv }}">
                                     <div>
-                                        <h4>MOTION XT SPORT</h4>
-                                        <h4>64.500,00 RSD</h4>
+                                        <h4>{{ $kofer->kofer_naziv }}</h4>
+                                        <h4>{{ $kofer->kofer_cena }},00 rsd</h4>
                                     </div>
                                 </div>
 

@@ -22,17 +22,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/krovni-koferi', function () {
+/*Route::get('/krovni-koferi', function () {
     return view('krovni-koferi');
-});
+});*/
+
+Route::get("krovni-koferi/{category?}", "FrontController@getKoferiPage");
 
 Route::get('/krovni-nosaci', function () {
     return view('krovni-nosaci');
 });
 
-Route::get('/jedan-proizvod', function () {
+/*Route::get('/jedan-proizvod', function () {
     return view('jedan-proizvod');
-});
+});*/
+
+Route::get("/krovni-koferi/{category}/{kofer}", "FrontController@getSingleKofer");
 
 Route::get('/kontakt', function () {
     return view('kontakt');
