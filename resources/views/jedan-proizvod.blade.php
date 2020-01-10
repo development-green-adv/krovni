@@ -32,7 +32,7 @@
 
                 </div>
                 <div class="col-md-9">
-                    <div class="krovni-koferi-right">
+                    <div class="krovni-koferi-right position-relative">
                         <div class="krovni-koferi-right-naslov d-flex justify-content-between">
                             <h3>KROVNI KOFERI THULE - MOTION XT SPORT</h3>
                             <h4 class="cena-proizvoda-naslov">64.500,00 RSD</h4>
@@ -58,8 +58,32 @@
                         </ul>
 
                         <div class="opis-proizvoda-btns mt-4">
-                            <a href="#">POŠALJITE UPIT</a>
+                            <a id="posaljite-upit" href="javascript:void(0)">POŠALJITE UPIT</a>
                             <a href="/krovni-koferi">POVRATAK</a>
+                        </div>
+
+                        <div class="upit" id="upit">
+                            <div class="upit-title">
+                                <h3>UPIT ZA KUPOVINU KROVNOG KOFERA</h3>
+                                <span id="close-upit">x</span>
+                            </div>
+                            <div class="upit-content">
+                                <div class="upit-content-top">
+                                    <img src="{{ asset('images/web/upit-img.png') }}" alt="">
+                                    <div>
+                                        <h4>MOTION XT SPORT</h4>
+                                        <h4>64.500,00 RSD</h4>
+                                    </div>
+                                </div>
+
+                                <form action="">
+                                    <input type="text" placeholder="ime i prezime"><br>
+                                    <input type="text" placeholder="Kontakt telefon" class="kontakt-input">
+                                    <input type="text" placeholder="Email adresa" class="email-input">
+                                    <textarea name="" id="" cols="30" rows="4" placeholder="Eventualne promene"></textarea> <br>
+                                    <button type="submit">POSALJITE UPIT</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -71,31 +95,7 @@
     @include("inc/porucite-inc")
 
 
-
-    <section class="krovni-koferi-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="krovni-koferi-bottom-card position-relative">
-                        <img src="{{ asset('images/web/krovni-koferi-bottom-card-1.png') }}" alt="">
-                        <a href="#">RENTIRANJE KROVNIH KOFERA</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="krovni-koferi-bottom-card position-relative">
-                        <img src="{{ asset('images/web/krovni-koferi-bottom-card-2.png') }}" alt="">
-                        <a href="#">PRODAJA KROVNIH KOFERA</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="krovni-koferi-bottom-card position-relative">
-                        <img src="{{ asset('images/web/krovni-koferi-bottom-card-3.png') }}" alt="">
-                        <a href="#">KROVNI KOSACI ZA SKIJE I BICKILE</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include("inc/footer-top")
 
 
     @include("inc/footer")

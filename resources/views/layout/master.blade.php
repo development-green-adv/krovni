@@ -100,5 +100,18 @@
             uiLibrary: 'bootstrap4'
         });
     </script>
+
+    <script>
+        $(document).ready(function() {
+
+            $('#posaljite-upit').click(function() {
+                $('#upit').css('display', 'block');
+            });
+            
+            $('#close-upit').click(function() {
+                $('#upit').css('display', 'none');
+            });
+        });
+    </script>
 </body>
 </html>
