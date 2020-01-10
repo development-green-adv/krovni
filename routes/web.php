@@ -53,6 +53,8 @@ Route::get("/admin/obrisi-administratora/{id}", "AdminController@deleteAdmin")->
 
 
 // rute za kofere
+Route::get("/admin/dodaj-kategorije-kofera", "AdminController@getAddCategoryKofer");
+Route::post("/admin/dodaj-kategorije-kofera", "AdminController@storeCategoryKofer");
 Route::get("/admin/dodaj-kofere", "AdminController@getAddKofer")->middleware("auth");
 Route::post("/admin/dodaj-kofere", "AdminController@storeKofer")->middleware("auth");
 Route::get("/admin/lista-kofera", "AdminController@getListKoferi")->middleware("auth");

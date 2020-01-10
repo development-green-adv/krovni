@@ -48,96 +48,25 @@
             @endif
 
 
-            <form action="/admin/dodaj-kofere" method="POST" enctype="multipart/form-data">
+            <form action="/admin/dodaj-kategorije-kofera" method="POST" enctype="multipart/form-data">
                 @csrf
 
 
                 <div class="row">
-                    <div class="form-group col-12 col-md-6">
-
-                        <label>Kategorija</label>
-                        <select class="form-control" name="kategorija">
-    
-                            <option selected disabled value="">Izaberite kategoriju</option>
-                            <option value="krovni-kofer-thule">Krovni kofer THULE</option>
-                            <option value="krovni-kofer-g3">Krovni kofer G3</option>
-                            <option value="krovni-kofer-cam">Krovni koferi CAM</option>
-    
-                        </select>
-
+                    <div class="form-group col-12 col-md-12">
+                        <label>Naziv kategorije</label>
+                        <input class="form-control" type="text" name="category_naziv">
+                    </div>
+                    <div class="form-group col-12 col-md-12">
+                        <label>Opis kategorija</label>
+                        <textarea class="form-control textarea" name="category_text" rows="15" placeholder="Unesite tekst ovde"></textarea>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="form-group col-12 col-md-6">
-                        <label>Naziv proizvoda</label>
-                        <input class="form-control" type="text" name="kofer_naziv">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label>Cena proizvoda</label>
-                        <input class="form-control" type="text" name="kofer_cena">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-12 col-md-6">
-                        <label>Duzina x sirina x visina</label>
-                        <input class="form-control" type="text" name="duzina_sirina_visina">
-                    </div>
-
-                    <div class="form-group col-12 col-md-6">
-                        <label>Unutrasnja dimenzija</label>
-                        <input class="form-control" type="text" name="unutrasnja_dimenzija">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-12 col-md-6">
-                        <label>Litraza</label>
-                        <input class="form-control" type="text" name="litraza">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label>Tezina praznog kofera</label>
-                        <input class="form-control" type="text" name="tezina_kofera">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-12 col-md-6">
-                        <label>Max dozvoljena nosivost</label>
-                        <input class="form-control" type="text" name="max_nosivost">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label>Otvaranje</label>
-                        <input class="form-control" type="text" name="otvaranje">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-12 col-md-6">
-                        <label>Centralno zakljucavanje</label>
-                        <input class="form-control" type="text" name="zakljucavanje">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label>Nacin kacenja</label>
-                        <input class="form-control" type="text" name="nacin_kacenja">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="form-group col-12 col-md-6">
-                        <label>Pogodno za skije</label>
-                        <input class="form-control" type="text" name="za_skije">
-                    </div>
-                    <div class="form-group col-12 col-md-6">
-                        <label>Boja</label>
-                        <input class="form-control" type="text" name="boja">
-                    </div>
-                </div>
-
+                
                 <div class="row">
                     <div class="col-12 col-md-12">
-                        <label for="">Status dogadjaja</label>
+                        <label for="">Status kategorije</label>
                         <select class="form-control" name="status">
 
                             <option value="1">Aktivan</option>
@@ -149,23 +78,12 @@
 
                 <div class="row">
                     <div class="form-group col-12 col-md-12">
-                        <label>Glavna slika</label><br>
+                        <label>Slika kategorije</label><br>
                         <span class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Izaberi</span>
                     </div>
                 </div>
                 <div id="glavna-slika">
 
-                </div>
-
-
-                <div class="row">
-                    <div class="form-group col-12 col-md-6">
-                    
-                        <label>Galerija slika</label><br>
-                        <span class="btn btn-primary" data-toggle="modal" data-target="#myModal">Izaberi</span>
-                        <div id="slike"></div>
-
-                    </div>
                 </div>
                 
                 <hr>

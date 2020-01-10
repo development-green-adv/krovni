@@ -154,6 +154,8 @@
                     </span>
                     </a>
                     <ul class="treeview-menu">
+                        <li><a href="/admin/dodaj-kategorije-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kategorije</a></li>
+                        <li><a href="/admin/lista-kategorija-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista kategorija</a></li>
                         <li><a href="/admin/dodaj-kofere"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kofere</a></li>
                         <li><a href="/admin/lista-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista Kofera</a></li>
                     </ul>

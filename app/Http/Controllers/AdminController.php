@@ -7,11 +7,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\ImageGallery;
-use App\News;
-use App\Event;
-use App\Blog;
+use App\Kofer_category;
 use App\Koferi;
-use App\Position;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -35,6 +32,52 @@ class AdminController extends Controller
     }
 
 
+    public function getAddCategoryKofer(){
+
+        $gallery = new ImageGallery();
+        $allImages = $gallery->orderBy('id', 'DESC')->get();
+
+        return view("admin/pages/dodaj-kategorije-kofera", compact("allImages"));
+
+    }
+
+
+    public function storeCategoryKofer(Request $request){
+
+        $categoryKofer = new Kofer_category();
+
+        $last = $categoryKofer->orderBy('position', 'desc')->first();
+
+        if(!$last){
+            $pos = 0;
+        }else{
+            $pos = $last['position'] + 1;
+        }
+
+        $alias = str_slug($request->input('category_naziv'), '-');
+
+        $categoryKofer->category_naziv      = $request->input("category_naziv");
+        $categoryKofer->alias               = $alias;
+        $categoryKofer->category_text       = $request->input("category_text");
+        $categoryKofer->status              = $request->input("status");
+        $categoryKofer->main_image          = $request->input("mainImage");
+        $categoryKofer->position            = $pos;
+
+        $saveCategory = $categoryKofer->save();
+
+        if($saveCategory){
+
+            return redirect()->back()->with('success', 'Uspešno ste dodali kategoriju');
+
+        }else{
+
+            return redirect()->back()->with('messageError', 'Niste dodali kategoriju');
+
+        }
+
+    }
+
+
     public function getAddKofer(){
 
         $gallery = new ImageGallery();
@@ -48,44 +91,53 @@ class AdminController extends Controller
 
         $kofer = new Koferi();
 
-        $alias = str_slug($request->input('kofer_naziv'), '-');
-        
-        if(!empty($request->input("galleryImages"))){
-            $gallery = implode(",", $request->input("galleryImages"));
+
+        if($request->input("kategorija") != ""){
+
+            $alias = str_slug($request->input('kofer_naziv'), '-');
+            
+            if(!empty($request->input("galleryImages"))){
+                $gallery = implode(",", $request->input("galleryImages"));
+            }else{
+                $gallery = NULL;
+            }
+
+
+            $kofer->kategorija                   = $request->input("kategorija");
+            $kofer->kofer_naziv                  = $request->input("kofer_naziv");
+            $kofer->alias                        = $alias;
+            $kofer->kofer_cena                   = $request->input("kofer_cena");
+            $kofer->duzina_sirina_visina         = $request->input("duzina_sirina_visina");
+            $kofer->unutrasnja_dimenzija         = $request->input("unutrasnja_dimenzija");
+            $kofer->litraza                      = $request->input("litraza");
+            $kofer->tezina_kofera                = $request->input("tezina_kofera");
+            $kofer->max_nosivost                 = $request->input("max_nosivost");
+            $kofer->otvaranje                    = $request->input("otvaranje");
+            $kofer->zakljucavanje                = $request->input("zakljucavanje");
+            $kofer->nacin_kacenja                = $request->input("nacin_kacenja");
+            $kofer->za_skije                     = $request->input("za_skije");
+            $kofer->boja                         = $request->input("boja");
+            $kofer->status                       = $request->input("status");
+            $kofer->main_image                   = $request->input("mainImage");
+            $kofer->image_gallery                = $gallery;
+
+            $saveKoferi = $kofer->save();
+
+            if($saveKoferi){
+
+                return redirect()->back()->with('success', 'Uspešno ste dodali kofer');
+
+            }else{
+
+                return redirect()->back()->with('messageError', 'Niste dodali kofer');
+
+            }
+            
         }else{
-            $gallery = "";
-        }
 
-        $kofer->kategorija                   = $request->input("kategorija");
-        $kofer->kofer_naziv                  = $request->input("kofer_naziv");
-        $kofer->alias                        = $alias;
-        $kofer->kofer_cena                   = $request->input("kofer_cena");
-        $kofer->duzina_sirina_visina         = $request->input("duzina_sirina_visina");
-        $kofer->unutrasnja_dimenzija         = $request->input("unutrasnja_dimenzija");
-        $kofer->litraza                      = $request->input("litraza");
-        $kofer->tezina_kofera                = $request->input("tezina_kofera");
-        $kofer->max_nosivost                 = $request->input("max_nosivost");
-        $kofer->otvaranje                    = $request->input("otvaranje");
-        $kofer->zakljucavanje                = $request->input("zakljucavanje");
-        $kofer->nacin_kacenja                = $request->input("nacin_kacenja");
-        $kofer->za_skije                     = $request->input("za_skije");
-        $kofer->boja                         = $request->input("boja");
-        $kofer->status                       = $request->input("status");
-        $kofer->main_image                   = $request->input("mainImage");
-        $kofer->image_gallery                = $gallery;
-
-        $saveKoferi = $kofer->save();
-
-        if($saveKoferi){
-
-            return redirect()->back()->with('success', 'Uspešno ste dodali kofer');
-
-        }else{
-
-            return redirect()->back()->with('messageError', 'Niste dodali kofer');
+            return redirect()->back()->with('messageError', 'Morate odabrati kategoriju');
 
         }
-
 
     }
 
@@ -116,7 +168,7 @@ class AdminController extends Controller
         if(!empty($request->input("galleryImages"))){
             $gallery = implode(",", $request->input("galleryImages"));
         }else{
-            $gallery = "";
+            $gallery = NULL;
         }
 
 
