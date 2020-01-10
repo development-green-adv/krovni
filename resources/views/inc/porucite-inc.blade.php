@@ -1,4 +1,4 @@
-<section class="second-section">
+<section class="second-section" id="rentiranje">
     <div class="container">
         <h1 data-aos="fade-right">PORUČITE KROVNI KOFERILI NOSAC <span>ONLINE</span></h1>
         <form action="">
