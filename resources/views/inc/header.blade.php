@@ -74,7 +74,7 @@
                   <a class="nav-link" href="/krovni-nosaci">KROVNI NOSAČI</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">RENTIRAJTE ONLINE</a>
+                    <a class="nav-link" href="#rentiranje">RENTIRAJTE ONLINE</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">GALERIJA</a>
