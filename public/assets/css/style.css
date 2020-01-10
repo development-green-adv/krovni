@@ -800,3 +800,149 @@ ul.karakteristike-proizvoda li:nth-child(even) {
     padding: 15px 30px;
     font-family: 'Roboto', sans-serif;
 }
+
+.krovni-koferi-right .upit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #e5e5e5;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: none;
+}
+
+.krovni-koferi-right .upit .upit-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.krovni-koferi-right .upit .upit-title h3 {
+    background-color: #000000;
+    color: #fff;
+    font-size: 20px;
+    width: 100%;
+    padding: 10px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    font-family: machine-font;
+    height: 50px;
+}
+
+.krovni-koferi-right .upit .upit-title span {
+    width: 50px;
+    height: 50px;
+    background-color: #ffd800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 18px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.krovni-koferi-right .upit .upit-content {
+    padding: 40px;
+}
+
+.krovni-koferi-right .upit .upit-content .upit-content-top {
+    display: flex; 
+    margin-bottom: 20px;
+}
+
+.krovni-koferi-right .upit .upit-content .upit-content-top img {
+    margin-right: 20px;
+}
+
+.krovni-koferi-right .upit .upit-content .upit-content-top h4 {
+    font-size: 25px;
+    font-family: machine-font;
+}
+
+.krovni-koferi-right .upit .upit-content form input {
+    border: none;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 3px;
+}
+
+.krovni-koferi-right .upit .upit-content form input:nth-child(1) {
+    width: 99%;
+    margin-bottom: 10px;
+}
+
+.krovni-koferi-right .upit .upit-content form input.kontakt-input, .krovni-koferi-right .upit .upit-content form input.email-input {
+    width: 49%;
+}
+
+.krovni-koferi-right .upit .upit-content form textarea {
+    width: 99%;
+    border: none;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+.krovni-koferi-right .upit .upit-content form button {
+    border: none;
+    color: #fff;
+    padding: 15px 30px;
+    background-color: #000000;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* KONTAKT */
+
+.kontakt-text {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.kontakt-page-form form {
+    width: 70%;
+}
+
+.kontakt-page-form form input {
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 3px;
+}
+
+.kontakt-page-form form input:nth-child(1) {
+    width: 99%;
+    margin-bottom: 20px;
+}
+
+.kontakt-page-form form .kontakt-page-form-1 {
+    width: 49%;
+    margin-bottom: 20px;
+}
+
+.kontakt-page-form form .kontakt-page-form-2 {
+    width: 49%;
+    margin-bottom: 20px;
+}
+
+.kontakt-page-form form textarea {
+    width: 99%;
+    border: 1px solid #e5e5e5;
+    padding: 10px;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.kontakt-page-form form button {
+    border: none;
+    background-color: #ffd800;
+    color: #fff;
+    padding: 15px 30px;
+    font-family: 'Roboto', sans-serif;
+    float: right;
+}

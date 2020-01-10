@@ -80,7 +80,7 @@
                     <a class="nav-link" href="#">GALERIJA</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">KONTAKT</a>
+                    <a class="nav-link" href="/kontakt">KONTAKT</a>
                 </li>
               </ul>
             </div>

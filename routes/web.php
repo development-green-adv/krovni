@@ -34,6 +34,10 @@ Route::get('/jedan-proizvod', function () {
     return view('jedan-proizvod');
 });
 
+Route::get('/kontakt', function () {
+    return view('kontakt');
+});
+
 
 // rute za admin deo
 Route::get("/admin/login", "AdminController@loginView")->name("admin.login");

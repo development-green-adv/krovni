@@ -82,7 +82,7 @@
         });
     </script>
 
-    
+       <!-- AOS ANIMATION -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({
@@ -92,12 +92,30 @@
         });
     </script>
 
+
+    <!-- CALENDAR DATEPICKER -->
     <script>
         $('#datepicker').datepicker({
             uiLibrary: 'bootstrap4'
         });
         $('#datepicker-1').datepicker({
             uiLibrary: 'bootstrap4'
+        });
+    </script>
+
+
+
+    <!-- OPEN AND CLOSE POP UP -->
+    <script>
+        $(document).ready(function() {
+
+            $('#posaljite-upit').click(function() {
+                $('#upit').css('display', 'block');
+            });
+            
+            $('#close-upit').click(function() {
+                $('#upit').css('display', 'none');
+            });
         });
     </script>
 </body>
