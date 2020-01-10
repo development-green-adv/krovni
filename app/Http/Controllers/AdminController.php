@@ -165,46 +165,68 @@ class AdminController extends Controller
 
     public function editKofer(Request $request){
 
-        if(!empty($request->input("galleryImages"))){
-            $gallery = implode(",", $request->input("galleryImages"));
+
+        $lastMainImg = Koferi::where("id", $request->input("id"))->first();
+
+        if($request->input("mainImage") != ""){
+            $mainImg = $request->input("mainImage");
         }else{
-            $gallery = NULL;
+            $mainImg = $lastMainImg['main_image'];
+        }
+
+        if($request->input("galleryImages") != ""){
+
+            if(!empty($request->input("galleryImages"))){
+                $gallery = implode(",", $request->input("galleryImages"));
+            }else{
+                $gallery = NULL;
+            }
+
+        }else{
+            $gallery = $lastMainImg['image_gallery'];
         }
 
 
-        $updateKofer = Koferi::where("id", $request->input("id"))->update([
+        if($request->input("kategorija") != ""){
 
-            "kategorija"     => $request->input("kategorija"),
-            "kofer_naziv"    => $request->input("kofer_naziv"),
-            "alias"          => str_slug($request->input('kofer_naziv'), '-'),
-            "kofer_cena"     => $request->input("kofer_cena"),
-            "duzina_sirina_visina" => $request->input("duzina_sirina_visina"),
-            "unutrasnja_dimenzija"  => $request->input("unutrasnja_dimenzija"),
-            "litraza"        => $request->input("litraza"),
-            "tezina_kofera"  => $request->input("tezina_kofera"),
-            "max_nosivost"   => $request->input("max_nosivost"),
-            "otvaranje"      => $request->input("otvaranje"),
-            "zakljucavanje"  => $request->input("zakljucavanje"),
-            "nacin_kacenja"  => $request->input("nacin_kacenja"),
-            "za_skije"       => $request->input("za_skije"),
-            "boja"           => $request->input("boja"),
-            "status"         => $request->input("status"),
-            "main_image"     => $request->input("mainImage"),
-            "image_gallery"  => $gallery
-  
-        ]);
+            $updateKofer = Koferi::where("id", $request->input("id"))->update([
 
-
-        if($updateKofer){
-
-            return redirect()->back()->with('success', 'Uspešno ste izmenili kofer');
+                "kategorija"     => $request->input("kategorija"),
+                "kofer_naziv"    => $request->input("kofer_naziv"),
+                "alias"          => str_slug($request->input('kofer_naziv'), '-'),
+                "kofer_cena"     => $request->input("kofer_cena"),
+                "duzina_sirina_visina" => $request->input("duzina_sirina_visina"),
+                "unutrasnja_dimenzija"  => $request->input("unutrasnja_dimenzija"),
+                "litraza"        => $request->input("litraza"),
+                "tezina_kofera"  => $request->input("tezina_kofera"),
+                "max_nosivost"   => $request->input("max_nosivost"),
+                "otvaranje"      => $request->input("otvaranje"),
+                "zakljucavanje"  => $request->input("zakljucavanje"),
+                "nacin_kacenja"  => $request->input("nacin_kacenja"),
+                "za_skije"       => $request->input("za_skije"),
+                "boja"           => $request->input("boja"),
+                "status"         => $request->input("status"),
+                "main_image"     => $mainImg,
+                "image_gallery"  => $gallery
+      
+            ]);
+    
+    
+            if($updateKofer){
+    
+                return redirect()->back()->with('success', 'Uspešno ste izmenili kofer');
+    
+            }else{
+    
+                return redirect()->back()->with('messageError', 'Niste izmenili kofer');
+    
+            }
 
         }else{
 
-            return redirect()->back()->with('messageError', 'Niste izmenili kofer');
+            return redirect()->back()->with('messageError', 'Morate izbrati kategoriju');
 
         }
-
 
     }
    

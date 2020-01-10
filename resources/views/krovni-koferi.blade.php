@@ -38,123 +38,35 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <a href="/jedan-proizvod">
-                                                <img src="{{ asset('images/web/lupa.png') }}" alt="">
-                                                <h4>KLIKNI ZA VISE DETALJA</h4>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <img src="{{ asset('images/web/lupa.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div  class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <img src="{{ asset('images/web/lupa.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div  class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <img src="{{ asset('images/web/lupa.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div  class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <img src="{{ asset('images/web/lupa.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div  class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <img src="{{ asset('images/web/lupa.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
-                        </div>
+                            @if(count($data) > 0)
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div  class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <img src="{{ asset('images/web/lupa.png') }}" alt="">
+                                @foreach($data as $kofer)
+
+                                    <div class="col-md-4">
+                                        <div class="krovni-koferi-right-card">
+                                            <div class="krovni-koferi-right-card-img position-relative">
+                                                <img class="img-fluid w-100" src="../images_gallery/{{ $kofer->main_image }}">
+                                                <div class="krovni-koferi-right-card-img-inner">
+                                                <a href="/krovni-koferi/{{ $kofer->kategorija }}/{{ $kofer->alias }}">
+                                                        <img src="{{ asset('images/web/lupa.png') }}">
+                                                        <h4>KLIKNI ZA VISE DETALJA</h4>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <p>{{ $kofer->kofer_naziv }}</p>
+                                            <p><b>{{ $kofer->kofer_cena }} rsd</b></p>
                                         </div>
                                     </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div  class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <img src="{{ asset('images/web/lupa.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="krovni-koferi-right-card">
-                                    <div  class="krovni-koferi-right-card-img position-relative">
-                                        <img class="img-fluid w-100" src="{{ asset('images/web/krovni-koferi-right-card.png') }}" alt="">
-                                        <div class="krovni-koferi-right-card-img-inner">
-                                            <img src="{{ asset('images/web/lupa.png') }}" alt="">
-                                        </div>
-                                    </div>
-                                    <p>MOTION XT SPORT</p>
-                                    <p><b>64.500,00 rsd</b></p>
-                                </div>
-                            </div>
+
+                                @endforeach
+
+                            @else
+
+                                <p>Trenutno nema kofera</p>
+
+                            @endif
+
                         </div>
                     </div>
                 </div>

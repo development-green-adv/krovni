@@ -6,15 +6,15 @@
         <li data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" class="collapsed li-drop">
             KROVNI KOFERI
         </li>
-        <ul class="multi-collapse collapse left-meni-items-inner" id="multiCollapseExample1"> 
+        <ul class="multi-collapse collapse show left-meni-items-inner" id="multiCollapseExample1"> 
             <li>
-                <a href="#">Krovni koferi thule</a>
+                <a href="/krovni-koferi/krovni-kofer-thule">Krovni koferi thule</a>
             </li>
             <li>
-                <a href="#">Krovni koferi g3</a>
+                <a href="/krovni-koferi/krovni-kofer-g3">Krovni koferi g3</a>
             </li>
             <li>
-                <a href="#">Krovni koferi cam</a>
+                <a href="/krovni-koferi/krovni-kofer-cam">Krovni koferi cam</a>
             </li>
         </ul>
         <li class="li-drop">
