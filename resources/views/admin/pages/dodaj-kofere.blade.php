@@ -252,7 +252,7 @@
                         @if(count($allImages) > 0)
                             @foreach ($allImages as $image)
                                 <div class="col-12 col-md-3" style="margin-top: 30px; height: 120px; width: 120px; overflow: hidden; display: inline-flex;">
-                                <img class="img-responsive modal-img bor" id="1{{ $image->id }}" name="{{ $image->image_name }}" onclick="getImageValue1({{ $image->id }})" src="{{ asset('public/images_gallery/'.$image->image_name) }}">
+                                <img class="img-responsive modal-img bor" id="1{{ $image->id }}" name="{{ $image->image_name }}" onclick="getImageValue1({{ $image->id }})" src="{{ asset('../images_gallery/'.$image->image_name) }}">
                                 </div>
                             @endforeach
                         @endif
