@@ -77,7 +77,7 @@
                     <a class="nav-link" href="#rentiranje">RENTIRAJTE ONLINE</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">GALERIJA</a>
+                    <a class="nav-link" href="/galerija">GALERIJA</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/kontakt">KONTAKT</a>

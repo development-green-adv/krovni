@@ -38,6 +38,10 @@ Route::get('/kontakt', function () {
     return view('kontakt');
 });
 
+Route::get('/galerija', function () {
+    return view('galerija');
+});
+
 
 // rute za admin deo
 Route::get("/admin/login", "AdminController@loginView")->name("admin.login");
