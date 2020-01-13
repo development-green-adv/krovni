@@ -37,7 +37,33 @@
                             <h3>GALERIJA</h3>
                         </div>
 
+                        <div id="lightgallery">
+                            <a href="{{ asset('images/web/gallery-image-1.png') }}">
+                                <img class="img-fluid" src="{{ asset('images/web/gallery-image-1.png') }}" />
+                                <h3>A KLASA</h3>
+                            </a>
+                            <a href="{{ asset('images/web/gallery-image-2.png') }}">
+                                <img class="img-fluid"  src="{{ asset('images/web/gallery-image-2.png') }}" />
+                                <h3>C KLASA</h3>
+                            </a>
+                            <a href="{{ asset('images/web/gallery-image-3.png') }}">
+                                <img class="img-fluid"  src="{{ asset('images/web/gallery-image-3.png') }}" />
+                                <h3>D KLASA</h3>
+                            </a>
 
+                            <a href="{{ asset('images/web/gallery-image-1.png') }}">
+                                <img class="img-fluid" src="{{ asset('images/web/gallery-image-1.png') }}" />
+                                <h3>A KLASA</h3>
+                            </a>
+                            <a href="{{ asset('images/web/gallery-image-2.png') }}">
+                                <img class="img-fluid"  src="{{ asset('images/web/gallery-image-2.png') }}" />
+                                <h3>C KLASA</h3>
+                            </a>
+                            <a href="{{ asset('images/web/gallery-image-3.png') }}">
+                                <img class="img-fluid"  src="{{ asset('images/web/gallery-image-3.png') }}" />
+                                <h3>D KLASA</h3>
+                            </a>
+                        </div>
 
                     </div>
                 </div>

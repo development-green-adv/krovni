@@ -18,6 +18,12 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 
+    {{-- <link rel="stylesheet" href="{{ asset('assets/lightgallery/lightgallery.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/lightgallery/lightgallery.js') }}"> --}}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/js/lightgallery.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.12/css/lightgallery.css" />
+
 
     <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
     <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
@@ -82,6 +88,7 @@
         });
     </script>
 
+
        <!-- AOS ANIMATION -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -89,6 +96,20 @@
             offset: 200,
             duration: 1000,
             disable: 'mobile'
+        });
+    </script>
+
+
+    {{-- <script src="{{ asset('assets/lightgallery/lg-thumbnail.js') }}"></script>
+    <script src="{{ asset('assets/lightgallery/lg-fullscreen.js') }}"></script>
+    <script src="{{ asset('assets/lightgallery/lg-autoplay.js') }}"></script>
+    <script src="{{ asset('assets/lightgallery/lg-pager.js') }}"></script>
+    <script src="{{ asset('assets/lightgallery/lg-zoom.js') }}"></script> --}}
+
+
+    <script>
+        $(document).ready(function() {
+            $('#lightgallery').lightGallery();
         });
     </script>
 

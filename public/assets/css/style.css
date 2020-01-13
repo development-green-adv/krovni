@@ -17,6 +17,26 @@ html {
     scroll-behavior: smooth;
   }
 
+
+#lightgallery {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 30px;
+}
+
+#lightgallery a {
+    text-decoration: none;
+}
+
+
+#lightgallery a h3 {
+    font-family: machine-font;
+    color: #000;
+    margin-top: 10px;
+    font-size: 22px;
+}
+
+
 .first-header {
     background-color: #252525;
     background-image: url('../../images/web/first-header-traka.png');

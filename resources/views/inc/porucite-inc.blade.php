@@ -19,7 +19,7 @@
                        </div>
                        
                        <select class="w-100 marka-vozila-items">
-                        <option value="volvo" selected>Odaberite marku vozila</option>
+                        <option selected>Odaberite marku vozila</option>
                         <option value="Alfa Romeo">Alfa Romeo</option>
                         <option value="Audi">Audi</option>
                         <option value="BMW">BMW</option>
