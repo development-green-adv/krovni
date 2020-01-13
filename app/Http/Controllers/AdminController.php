@@ -9,6 +9,9 @@ use App\User;
 use App\ImageGallery;
 use App\Kofer_category;
 use App\Koferi;
+use App\Modell;
+use App\Rentkofer;
+use App\Rentnosac;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
@@ -229,15 +232,206 @@ class AdminController extends Controller
         }
 
     }
+
+
+
+    public function getAddCar(){
+
+        return view("admin/pages/dodaj-auto");
+
+    }
+
+
+    public function storeCar(Request $request){
+
+        $modell = new Modell();
+
+        if($request->input("marka") != ""){
+
+            $modell->marka      = $request->input("marka");
+            $modell->model      = $request->input("model");
+            $modell->vrsta_nosaca = $request->input("vrsta_nosaca");
+            $modell->kit        = $request->input("kit");
+            $modell->sipka      = $request->input("sipka");
+
+            $saveMode = $modell->save();
+
+            if($saveMode){
+        
+                return redirect()->back()->with('success', 'Uspešno ste dodali model');
+
+            }else{
+
+                return redirect()->back()->with('messageError', 'Niste dodali model');
+
+            }
+
+        }else{
+
+            return redirect()->back()->with('messageError', 'Morate odabrati Marku automobila'); 
+
+        }
+
+    }
+
+
+    public function listCars(){
+
+        $data = Modell::get();
+
+        return view("admin/pages/lista-automobila", compact("data"));
+
+    }
+
+
+
+    public function deleteCar($id){
+
+        $deleteCar = Modell::where("id", $id)->delete();
+
+        if($deleteCar){
+        
+            return redirect()->back()->with('success', 'Uspešno ste obrisali model');
+
+        }else{
+
+            return redirect()->back()->with('messageError', 'Niste obrisali model');
+
+        }
+
+    }
    
 
+    public function getAddKoferi(){
+
+        $gallery = new ImageGallery();
+        $allImages = $gallery->orderBy('id', 'DESC')->get();
+
+        return view("admin/pages/dodaj-rent-kofere", compact("allImages"));
+
+    }
 
 
+    public function storeKoferi(Request $request){
+
+        $rentKof = new Rentkofer();
+
+        $rentKof->model_kofera    = $request->input("model_kofera");
+        $rentKof->dimenzije       = $request->input("dimenzije");
+        $rentKof->zapremina       = $request->input("zapremina");
+        $rentKof->kofer0103       = $request->input("kofer0103");
+        $rentKof->kofer0407       = $request->input("kofer0407");
+        $rentKof->kofer0812       = $request->input("kofer0812");
+        $rentKof->kofer1320       = $request->input("kofer1320");
+        $rentKof->komplet0103     = $request->input("komplet0103");
+        $rentKof->komplet0407     = $request->input("komplet0407");
+        $rentKof->komplet0812     = $request->input("komplet0812");
+        $rentKof->komplet1320     = $request->input("komplet1320");
+        $rentKof->main_image      = $request->input("mainImage");
+
+        $saveRentKof = $rentKof->save();
 
 
+        if($saveRentKof){
+        
+            return redirect()->back()->with('success', 'Uspešno dodali kofer na rentiranje');
+
+        }else{
+
+            return redirect()->back()->with('messageError', 'Niste dodali kofer');
+
+        }
+        
+
+    }
 
 
+    public function listRentKofer(){
 
+        $data = Rentkofer::get();
+
+        return view("admin/pages/lista-rent-kofer", compact("data"));
+
+    }
+
+
+    public function deleteRentKofer($id){
+
+        $deleteRentKofer = Rentkofer::where("id", $id)->delete();
+
+        if($deleteRentKofer){
+        
+            return redirect()->back()->with('success', 'Uspešno ste obrisali kofer sa rentiranja');
+
+        }else{
+
+            return redirect()->back()->with('messageError', 'Niste obrisali kofer');
+
+        }
+
+    }
+
+
+    public function getAddNosac(){
+
+        $gallery = new ImageGallery();
+        $allImages = $gallery->orderBy('id', 'DESC')->get();
+
+        return view("admin/pages/dodaj-rent-nosaci", compact("allImages"));
+
+    }
+
+
+    public function storeNosac(Request $request){
+
+        $rentNos = new Rentnosac();
+
+        $rentNos->model_nosaca    = $request->input("model_nosaca");
+        $rentNos->nosac0103       = $request->input("nosac0103");
+        $rentNos->nosac0407       = $request->input("nosac0407");
+        $rentNos->nosac0812       = $request->input("nosac0812");
+        $rentNos->nosac1320       = $request->input("nosac1320");
+
+        $saveRentNos = $rentNos->save();
+
+
+        if($saveRentNos){
+        
+            return redirect()->back()->with('success', 'Uspešno dodali nosač na rentiranje');
+
+        }else{
+
+            return redirect()->back()->with('messageError', 'Niste dodali nosač');
+
+        }
+        
+
+    }
+
+
+    public function listNosaca(){
+
+        $data = Rentnosac::get();
+
+        return view("admin/pages/lista-rent-nosaca", compact("data"));
+
+    }
+
+    public function deleteNosac($id){
+
+        $deleteRentNosac = Rentnosac::where("id", $id)->delete();
+
+        if($deleteRentNosac){
+        
+            return redirect()->back()->with('success', 'Uspešno ste obrisali nosač sa rentiranja');
+
+        }else{
+
+            return redirect()->back()->with('messageError', 'Niste obrisali nosač');
+
+        }
+
+    }
 
 
 

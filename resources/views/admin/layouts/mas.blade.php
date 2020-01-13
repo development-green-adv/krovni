@@ -148,16 +148,68 @@
                 <li class="treeview">
                     <a href="#">
                     <i class="fas fa-users"></i>
-                    <span style="margin-left: 5px;">Krovni koferi</span>
+                    <span style="margin-left: 5px;">Krovni koferi prodaja</span>
                     <span class="pull-right-container">
                         <span class="label label-primary pull-right">2</span>
                     </span>
                     </a>
                     <ul class="treeview-menu">
-                        <li><a href="/admin/dodaj-kategorije-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kategorije</a></li>
-                        <li><a href="/admin/lista-kategorija-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista kategorija</a></li>
+                        <!--<li><a href="/admin/dodaj-kategorije-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kategorije</a></li>
+                        <li><a href="/admin/lista-kategorija-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista kategorija</a></li>-->
                         <li><a href="/admin/dodaj-kofere"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kofere</a></li>
                         <li><a href="/admin/lista-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista Kofera</a></li>
+                    </ul>
+                </li>
+                <!--// Kraj kategorije -->
+
+                <!--// Kategorije -->
+                <li class="treeview">
+                    <a href="#">
+                    <i class="fas fa-users"></i>
+                    <span style="margin-left: 5px;">Krovni koferi rentiranje</span>
+                    <span class="pull-right-container">
+                        <span class="label label-primary pull-right">2</span>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="/admin/dodaj-rent-kofere"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kofere</a></li>
+                        <li><a href="/admin/lista-rent-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista Kofera</a></li>
+                    </ul>
+                </li>
+                <!--// Kraj kategorije -->
+
+                <!--// Kategorije -->
+                <li class="treeview">
+                    <a href="#">
+                    <i class="fas fa-users"></i>
+                    <span style="margin-left: 5px;">Nosaci rentiranje</span>
+                    <span class="pull-right-container">
+                        <span class="label label-primary pull-right">2</span>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <!--<li><a href="/admin/dodaj-kategorije-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kategorije</a></li>
+                        <li><a href="/admin/lista-kategorija-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista kategorija</a></li>-->
+                        <li><a href="/admin/dodaj-rent-nosaci"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Nosace</a></li>
+                        <li><a href="/admin/lista-rent-nosaca"><i class="fas fa-arrow-alt-circle-right"></i> Lista Nosaca</a></li>
+                    </ul>
+                </li>
+                <!--// Kraj kategorije -->
+
+                <!--// Kategorije -->
+                <li class="treeview">
+                    <a href="#">
+                    <i class="fas fa-users"></i>
+                    <span style="margin-left: 5px;">Modeli automobila</span>
+                    <span class="pull-right-container">
+                        <span class="label label-primary pull-right">2</span>
+                    </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <!--<li><a href="/admin/dodaj-kategorije-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Kategorije</a></li>
+                        <li><a href="/admin/lista-kategorija-kofera"><i class="fas fa-arrow-alt-circle-right"></i> Lista kategorija</a></li>-->
+                        <li><a href="/admin/dodaj-automobile"><i class="fas fa-arrow-alt-circle-right"></i> Dodaj Modele</a></li>
+                        <li><a href="/admin/lista-automobila"><i class="fas fa-arrow-alt-circle-right"></i> Lista Modela</a></li>
                     </ul>
                 </li>
                 <!--// Kraj kategorije -->

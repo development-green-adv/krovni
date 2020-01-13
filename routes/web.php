@@ -65,8 +65,8 @@ Route::get("/admin/obrisi-administratora/{id}", "AdminController@deleteAdmin")->
 
 
 // rute za kofere
-Route::get("/admin/dodaj-kategorije-kofera", "AdminController@getAddCategoryKofer");
-Route::post("/admin/dodaj-kategorije-kofera", "AdminController@storeCategoryKofer");
+Route::get("/admin/dodaj-kategorije-kofera", "AdminController@getAddCategoryKofer")->middleware("auth");;
+Route::post("/admin/dodaj-kategorije-kofera", "AdminController@storeCategoryKofer")->middleware("auth");;
 Route::get("/admin/dodaj-kofere", "AdminController@getAddKofer")->middleware("auth");
 Route::post("/admin/dodaj-kofere", "AdminController@storeKofer")->middleware("auth");
 Route::get("/admin/lista-kofera", "AdminController@getListKoferi")->middleware("auth");
@@ -74,7 +74,25 @@ Route::get("/admin/izmeni-kofer/{id}", "AdminController@getEditKofer")->middlewa
 Route::post("/admin/izmeni-kofer", "AdminController@editKofer")->middleware("auth");
 
 
+// rute za rent kofere
+Route::get("/admin/dodaj-rent-kofere", "AdminController@getAddKoferi")->middleware("auth");
+Route::post("/admin/dodaj-rent-kofere", "AdminController@storeKoferi")->middleware("auth");
+Route::get("/admin/lista-rent-kofera", "AdminController@listRentKofer")->middleware("auth");
+Route::get("/admin/obrisi-rent-kofer/{id}", "AdminController@deleteRentKofer")->middleware("auth");
 
+
+// rute za automobile 
+Route::get("/admin/dodaj-automobile", "AdminController@getAddCar")->middleware("auth");
+Route::post("/admin/dodaj-automobile", "AdminController@storeCar")->middleware("auth");
+Route::get("/admin/lista-automobila", "AdminController@listCars")->middleware("auth");
+Route::get("/admin/obrisi-automobil/{id}", "AdminController@deleteCar")->middleware("auth");
+
+
+// rute za rent nosace
+Route::get("/admin/dodaj-rent-nosaci", "AdminController@getAddNosac")->middleware("auth");
+Route::post("/admin/dodaj-rent-nosaci", "AdminController@storeNosac")->middleware("auth");
+Route::get("/admin/lista-rent-nosaca", "AdminController@listNosaca")->middleware("auth");
+Route::get("/admin/obrisi-rent-nosac/{id}", "AdminController@deleteNosac")->middleware("auth");
 
 
 // ruta za dodavanje slika
